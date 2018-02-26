@@ -53,7 +53,7 @@ public class CityServiceImpl implements CityService {
         City city = cityDao.findById(id);
 
         // 插入缓存
-        operations.set(key, city, 10, TimeUnit.SECONDS);
+        operations.set(key, city, 10, TimeUnit.MINUTES);
         LOGGER.info("CityServiceImpl.findCityById() : 城市插入缓存 >> " + city.toString());
 
         return city;
